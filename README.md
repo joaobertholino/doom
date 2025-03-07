@@ -2,7 +2,7 @@
 ![Initial buffer](https://i.imgur.com/ksddHF8.png)
 
 ## Prerequistes
-- ![Emacs](https://www.gnu.org/software/emacs/)
+- ![Emacs Vanilla](https://www.gnu.org/software/emacs/)
 - ![Doom Emacs](https://github.com/doomemacs/doomemacs/tree/master)
 
 ## Installing
