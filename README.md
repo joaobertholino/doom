@@ -2,8 +2,8 @@
 ![Initial buffer](https://i.imgur.com/ksddHF8.png)
 
 ## Prerequistes
-- Emacs 27.1–30.1
-- ![Doom Emacs](https://github.com/doomemacs/doomemacs/tree/master) latest version.
+- ![Emacs](https://www.gnu.org/software/emacs/)
+- ![Doom Emacs](https://github.com/doomemacs/doomemacs/tree/master)
 
 ## Installing
 Make a backup of your files and exclude original files.
