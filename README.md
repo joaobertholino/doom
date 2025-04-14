@@ -1,5 +1,5 @@
 ## Config files of Doom Emacs
-![Initial buffer](https://i.imgur.com/ksddHF8.png)
+![Initial buffer](https://i.imgur.com/gSfokYV.png)
 
 ## Prerequistes
 - ![Emacs Vanilla](https://www.gnu.org/software/emacs/)
