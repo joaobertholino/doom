@@ -56,8 +56,8 @@
        (evil +everywhere); come to the dark side, we have cookies
        file-templates    ; auto-snippets for empty files
        fold              ; (nigh) universal code folding
-       (format +lsp +onsave)  ; automated prettiness
-       god               ; run Emacs commands without modifier keys
+       (format +lsp)  ; automated prettiness
+       ;;god               ; run Emacs commands without modifier keys
        ;;lispy             ; vim for lisp, for people who don't like vim
        ;;multiple-cursors  ; editing in many places at once
        ;;objed             ; text object editing for the innocent
@@ -114,7 +114,7 @@
        :lang
        ;;agda              ; types of types of types of types...
        ;;beancount         ; mind the GAAP
-       (cc +lsp)         ; C > C++ == 1
+       (cc +lsp +tree-sitter)         ; C > C++ == 1
        ;;(clojure +lsp +tree-sitter)           ; java with a lisp
        common-lisp       ; if you've seen one lisp, you've seen them all
        ;;coq               ; proofs-as-programs
@@ -170,20 +170,20 @@
        ;;rest              ; Emacs as a REST client
        ;;rst               ; ReST in peace
        ;;(ruby +rails)     ; 1.step {|i| p "Ruby is #{i.even? ? 'love' : 'life'}"}
-       ;;(rust +lsp)       ; Fe2O3.unwrap().unwrap().unwrap().unwrap()
+       (rust +lsp +tree-sitter)       ; Fe2O3.unwrap().unwrap().unwrap().unwrap()
        ;;scala             ; java, but good
-       (scheme +guile)   ; a fully conniving family of lisps
+       ;;(scheme +guile)   ; a fully conniving family of lisps
        (sh +lsp +tree-sitter)                ; she sells {ba,z,fi}sh shells on the C xor
        ;;sml
        ;;solidity          ; do you need a blockchain? No.
        ;;swift             ; who asked for emoji variables?
        ;;terra             ; Earth and Moon in alignment for performance.
        ;;web               ; the tubes
-       ;;(yaml +lsp +tree-sitter)              ; JSON, but readable
+       (yaml +lsp +tree-sitter)              ; JSON, but readable
        ;;zig               ; C, but simpler
 
        :email
-       (mu4e +org +gmail)
+       ;;(mu4e +org +gmail)
        ;;notmuch
        ;;(wanderlust +gmail)
 
