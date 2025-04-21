@@ -20,7 +20,7 @@
                                            ":3333" :cwd root))))))
  '(package-selected-packages
    '(auctex auto-complete cargo-mode company company-spell daemons evil-collection
-     lsp-java lsp-ui rust-mode vterm)))
+     lsp-java lsp-ui org-tanglesync rust-mode rustic vterm)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
