@@ -1,5 +1,7 @@
 ;;; $DOOMDIR/config.el -*- lexical-binding: t; -*-
 
+;wdwdwd
+
 (setq user-full-name "João Bertholino"
       user-mail-address "comercial.bertholino@gmail.com"
       doom-theme 'doom-dracula)
