@@ -1,7 +1,5 @@
 ;;; $DOOMDIR/config.el -*- lexical-binding: t; -*-
 
-;wdwdwd
-
 (setq user-full-name "João Bertholino"
       user-mail-address "comercial.bertholino@gmail.com"
       doom-theme 'doom-dracula)
@@ -18,7 +16,7 @@
       fancy-splash-image "~/.config/doom/logo-splash/doom-emacs-logo.png"
       org-directory "~/org-mode/"
       org-agenda-files '("~/org-mode/tarefas.org" "~/org-mode/projetos.org")
-      auto-save-visited-interval 0.5)
+      auto-save-visited-interval 0.1)
 
 (auto-save-visited-mode +1)
 (advice-add 'doom-dashboard-widget-banner :filter-args #'my-resize-doom-logo)
