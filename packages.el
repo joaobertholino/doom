@@ -72,3 +72,6 @@
 ;; Suporte oficial do Lean 4 para Emacs
 (package! lean4-mode
   :recipe (:host github :repo "leanprover-community/lean4-mode" :files ("*.el" "data")))
+
+(package! copilot
+  :recipe (:host github :repo "copilot-emacs/copilot.el" :files ("*.el")))
