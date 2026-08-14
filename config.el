@@ -51,8 +51,8 @@
         TeX-source-correlate-start-server t
         font-latex-fontify-script t
         font-latex-fontify-sectioning 'color
-        LaTeX-indent-level 2
-        LaTeX-item-indent 2
+        LaTeX-indent-level 1
+        LaTeX-item-indent 1
         TeX-brace-indent-level 2
         LaTeX-top-newline-count 2
         LaTeX-electric-left-right-brace t
