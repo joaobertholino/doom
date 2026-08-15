@@ -150,7 +150,7 @@
        ;;julia             ; a better, faster MATLAB
        ;;kotlin            ; a better, slicker Java(Script)
        (latex +cdlatex +lsp +latexmk)             ; writing papers in Emacs has never been so fun
-       ;;(lean +lsp +v3)              ; for folks with too much to prove
+       (lean +lsp +v3)              ; for folks with too much to prove
        ;;ledger            ; be audit you can be
        ;;lua               ; one-based indices? one-based indices
        (markdown +lsp +grip +tree-sitter)          ; writing docs for people to ignore
@@ -162,7 +162,7 @@
        ;;plantuml          ; diagrams for confusing people more
        ;;graphviz          ; diagrams for confusing yourself even more
        ;;purescript        ; javascript, but functional
-       ;;(python +conda +cython +lsp +poetry +pyenv +pyright)            ; beautiful is better than ugly
+       (python +conda +cython +lsp +poetry +pyenv +pyright)            ; beautiful is better than ugly
        ;;qt                ; the 'cutest' gui framework ever
        ;;racket            ; a DSL for DSLs
        ;;raku              ; the artist formerly known as perl6
