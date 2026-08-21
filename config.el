@@ -2,15 +2,28 @@
 
 (setq user-full-name "João Bertholino"
       user-mail-address "comercial.bertholino@gmail.com"
-      doom-theme 'doom-dracula)
+      doom-theme 'doom-one-light)
 
 (custom-set-faces!
-  '(default :background "#000000")
-  '(solaire-default-face :background "#000000")
-  '(magit-background :background "#000000")
-  '(neo-banner-face :background "#000000")
-  '(neo-root-dir-face :background "#000000")
-  '(fringe :background "#000000"))
+  '(default :background "#ffffff" :foreground "#000000")
+  '(solaire-default-face :background "#ffffff" :foreground "#000000")
+  '(mode-line :background "#000000" :foreground "#ffffff" :box nil)
+  '(mode-line-inactive :background "#888888" :foreground "#ffffff" :box nil)
+  '(magit-background :background "#ffffff")
+  '(neo-banner-face :background "#ffffff")
+  '(neo-root-dir-face :background "#ffffff")
+  '(fringe :background "#ffffff")
+  '(line-number :foreground "#888888" :background "#ffffff")
+  '(line-number-current-line :foreground "#000000" :background "#ffffff" :bold t)
+  '(region :background "#000000" :foreground "#ffffff")
+  '(highlight :background "#888888" :foreground "#ffffff")
+  '(font-lock-comment-face :foreground "#666666" :slant italic)
+  '(font-lock-string-face :foreground "#222222")
+  '(font-lock-keyword-face :foreground "#000000" :weight bold)
+  '(font-lock-function-name-face :foreground "#000000" :weight bold)
+  '(font-lock-variable-name-face :foreground "#000000")
+  '(font-lock-type-face :foreground "#000000" :weight bold)
+  '(font-lock-constant-face :foreground "#000000" :weight bold))
 
 (setq display-line-numbers-type t
       fancy-splash-image "~/.config/doom/logo-splash/doom-emacs-logo.png"
@@ -105,11 +118,11 @@
   (setq org-todo-keywords
         '((sequence "TODO(t)" "IN-PROGRESS(p)" "WAITING(w)" "|" "DONE(d)" "CANCELLED(c)"))
         org-todo-keyword-faces
-        '(("TODO"        . org-todo)
-          ("IN-PROGRESS" . (+doom-themes-color 'blue))
-          ("WAITING"     . (+doom-themes-color 'yellow))
-          ("DONE"        . (+doom-themes-color 'green))
-          ("CANCELLED"   . (+doom-themes-color 'red)))
+        '(("TODO"        . "#000000")
+          ("IN-PROGRESS" . "#444444")
+          ("WAITING"     . "#666666")
+          ("DONE"        . "#000000")
+          ("CANCELLED"   . "#888888"))
         org-default-notes-file (expand-file-name "task.org" org-directory)
         org-capture-templates
         '(("t" "New Task" entry (file+headline "task.org" "Inbox")

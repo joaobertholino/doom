@@ -6,7 +6,8 @@
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes t)
  '(package-selected-packages
-   '(company-anaconda dracula-theme latex-extra math-symbols pdf-tools zathura)))
+   '(acme-theme company-anaconda dracula-theme inverse-acme-theme latex-extra
+     math-symbols pdf-tools plan9-theme zathura)))
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
