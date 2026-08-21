@@ -2,28 +2,15 @@
 
 (setq user-full-name "João Bertholino"
       user-mail-address "comercial.bertholino@gmail.com"
-      doom-theme 'doom-one-light)
+      doom-theme 'doom-dracula)
 
 (custom-set-faces!
-  '(default :background "#ffffff" :foreground "#000000")
-  '(solaire-default-face :background "#ffffff" :foreground "#000000")
-  '(mode-line :background "#000000" :foreground "#ffffff" :box nil)
-  '(mode-line-inactive :background "#888888" :foreground "#ffffff" :box nil)
-  '(magit-background :background "#ffffff")
-  '(neo-banner-face :background "#ffffff")
-  '(neo-root-dir-face :background "#ffffff")
-  '(fringe :background "#ffffff")
-  '(line-number :foreground "#888888" :background "#ffffff")
-  '(line-number-current-line :foreground "#000000" :background "#ffffff" :bold t)
-  '(region :background "#000000" :foreground "#ffffff")
-  '(highlight :background "#888888" :foreground "#ffffff")
-  '(font-lock-comment-face :foreground "#666666" :slant italic)
-  '(font-lock-string-face :foreground "#222222")
-  '(font-lock-keyword-face :foreground "#000000" :weight bold)
-  '(font-lock-function-name-face :foreground "#000000" :weight bold)
-  '(font-lock-variable-name-face :foreground "#000000")
-  '(font-lock-type-face :foreground "#000000" :weight bold)
-  '(font-lock-constant-face :foreground "#000000" :weight bold))
+  '(default :background "#000000")
+  '(solaire-default-face :background "#000000")
+  '(magit-background :background "#000000")
+  '(neo-banner-face :background "#000000")
+  '(neo-root-dir-face :background "#000000")
+  '(fringe :background "#000000"))
 
 (setq display-line-numbers-type t
       fancy-splash-image "~/.config/doom/logo-splash/doom-emacs-logo.png"
