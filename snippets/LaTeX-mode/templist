@@ -43,7 +43,7 @@
 
 \title{\textbf{\discipline} \text{--} \textbf{\doc}}
 \author{\name \\\\ \textbf{NUSP:} \usp \\\\ \textbf{class:} \class}
-\date{\today}
+\date{}
 
 \begin{document}
 \maketitle
