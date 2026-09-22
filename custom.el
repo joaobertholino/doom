@@ -6,7 +6,7 @@
 (custom-set-faces
  )
 
-(put 'erase-buffer 'disabled nil)
 (cua-mode +1)
 (setq split-width-threshold nil)
 (setq split-height-threshold 0)
+(put 'erase-buffer 'disabled nil)
