@@ -12,8 +12,8 @@
 
 (setq display-line-numbers-type t
       fancy-splash-image "~/.config/doom/logo-splash/doom-emacs-logo.png"
-      org-directory "~/org-mode/"
-      org-agenda-files '("~/org-mode/tarefas.org" "~/org-mode/projetos.org")
+      org-directory "~/Org-Notes/"
+      org-agenda-files '("~/org-Notes/tarefas.org" "~/Org-Notes/projetos.org")
       auto-save-visited-interval 0.1)
 
 (auto-save-visited-mode +1)
