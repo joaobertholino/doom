@@ -224,6 +224,10 @@
       (cl-remove-if (lambda (entry) (eq (cdr entry) 'zathura-mode)) auto-mode-alist))
 (add-to-list 'auto-mode-alist '("\\.pdf\\'" . pdf-view-mode))
 
+(after! projectile
+  (setq projectile-project-root-files-bottom-up
+        (remove ".git" projectile-project-root-files-bottom-up)))
+
 (after! doom-modeline
   (setq doom-modeline-time t
         doom-modeline-time-icon nil
