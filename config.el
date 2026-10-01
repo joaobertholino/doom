@@ -49,7 +49,8 @@
 
 (defun my/open-graphical-browser ()
   (interactive)
-  (xwidget-webkit-browse-url (read-string "Address: " "https://")))
+  (start-process "zen-browser" nil "zen-browser"
+                 (read-string "Address: " "https://")))
 
 (defun my/switch-buffer-vertically ()
   (interactive)
@@ -227,14 +228,6 @@
 (after! projectile
   (setq projectile-project-root-files-bottom-up
         (remove ".git" projectile-project-root-files-bottom-up)))
-
-(after! doom-modeline
-  (setq doom-modeline-time t
-        doom-modeline-time-icon nil
-        doom-modeline-time-live-icon nil
-        display-time-24hr-format t
-        display-time-format "%A, %d de %B de %Y — %H:%M")
-  (display-time-mode +1))
 
 (after! vterm
   (dolist (key-binding '(("M-<up>"    . windmove-up)
