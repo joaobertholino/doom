@@ -25,6 +25,8 @@
         (insert content)))
     path))
 
+;; TESTE
+
 (defun my/create-project ()
   (interactive)
   (let* ((language (completing-read
