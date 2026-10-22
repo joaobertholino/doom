@@ -94,9 +94,6 @@
         ("Open home terminal"
          :icon (nerd-icons-octicon "nf-oct-terminal" :face '+dashboard-menu-title)
          :action my/open-home-terminal)
-        ("Open browser"
-         :icon (nerd-icons-octicon "nf-oct-globe" :face '+dashboard-menu-title)
-         :action my/open-graphical-browser)
         ("Open private configuration"
          :icon (nerd-icons-octicon "nf-oct-tools" :face '+dashboard-menu-title)
          :when (file-directory-p doom-user-dir)
@@ -258,3 +255,16 @@
          :map copilot-mode-map
          ("<tab>" . copilot-accept-completion)
          ("TAB" . copilot-accept-completion)))
+
+;; Catálogo de atalhos: SPC h B ou M-x my/open-doom-keybindings-catalog.
+(defun my/open-doom-keybindings-catalog ()
+  "Abre o catálogo pessoal de atalhos do Doom Emacs em PDF."
+  (interactive)
+  (let ((pdf (expand-file-name "catalogo/atalhos-doom-emacs.pdf" doom-user-dir)))
+    (unless (file-readable-p pdf)
+      (user-error "Catálogo não encontrado: %s" pdf))
+    (find-file pdf)))
+
+(map! :leader
+      :desc "Abrir catálogo de atalhos (PDF)"
+      "h B" #'my/open-doom-keybindings-catalog)
