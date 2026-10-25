@@ -1,3 +1,8 @@
+# -*- mode: snippet -*-
+# name: birkjour
+# key: birkjour
+# uuid: joaob-latex-birkjour
+# --
 \documentclass{birkjour}
 
 \usepackage[english]{babel}

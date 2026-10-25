@@ -1,3 +1,8 @@
+# -*- mode: snippet -*-
+# name: general-temp
+# key: general-temp
+# uuid: joaob-latex-general-temp
+# --
 \documentclass{birkjour}
 
 \usepackage[english]{babel}

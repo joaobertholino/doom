@@ -99,24 +99,40 @@
          :when (file-directory-p doom-user-dir)
          :action doom/open-private-config)))
 
-(after! latex
-  (defun my/latex-force-cleanup ()
-    (let* ((base-dir (shell-quote-argument
-                      (expand-file-name
-                       (or (projectile-project-root)
-                           (file-name-directory (or (buffer-file-name) default-directory))))))
-           (exts '("aux" "bbl" "blg" "idx" "ind" "lof" "lot" "out" "toc"
-                   "acn" "acr" "alg" "glg" "glo" "gls" "fls" "log"
-                   "fdb_latexmk" "snm" "synctex.gz" "nav" "vrb"))
-           (find-cmd (format "find %s -type f \\( %s \\) -delete"
-                             base-dir
-                             (mapconcat (lambda (e) (format "-name \"*.%s\"" e)) exts " -o "))))
-      (shell-command find-cmd)
-      (message "Limpeza forçada em subdiretórios concluída.")))
+;; O daemon pode ter iniciado antes da instalação do TeX Live do usuário.
+(let ((tex-bin (expand-file-name "~/.local/share/texlive/2026/bin/x86_64-linux")))
+  (when (file-directory-p tex-bin)
+    (add-to-list 'exec-path tex-bin)
+    (setenv "PATH" (concat tex-bin path-separator (getenv "PATH")))))
 
-  (add-hook 'TeX-after-compilation-finished-functions
-            (lambda (&rest _)
-              (run-with-timer 2 nil #'my/latex-force-cleanup)))
+(defun my/latex-pdf-auto-revert ()
+  "Atualiza o PDF aberto quando o latexmk termina uma compilação."
+  (auto-revert-mode 1))
+(add-hook 'pdf-view-mode-hook #'my/latex-pdf-auto-revert)
+
+(after! auctex-cont-latexmk
+  (setq auctex-cont-latexmk-command
+        '("latexmk -pvc -lualatex -view=none -synctex=1 -file-line-error -interaction=nonstopmode")))
+
+(after! latex
+  ;; Mantém um monitor contínuo por documento principal desde a abertura.
+  ;; Aguarda as variáveis locais para respeitar TeX-master em arquivos incluídos.
+  (defun my/latex-auto-compile ()
+    "Inicia a compilação contínua do documento LaTeX salvo."
+    (when (and buffer-file-name
+               (not (file-remote-p buffer-file-name))
+               (file-exists-p (TeX-master-file "tex"))
+               (executable-find "latexmk")
+               (not (bound-and-true-p auctex-cont-latexmk-mode)))
+      (auctex-cont-latexmk-mode 1)))
+
+  (defun my/latex-auto-compile-setup ()
+    "Ativa a compilação automática ao salvar neste buffer."
+    (add-hook 'after-save-hook #'my/latex-auto-compile t t)
+    (setq-local TeX-command-default "LatexMk"))
+
+  (add-hook 'LaTeX-mode-hook #'my/latex-auto-compile-setup)
+  (add-hook 'LaTeX-mode-local-vars-hook #'my/latex-auto-compile)
 
   (setq-default TeX-engine 'luatex)
   (setq TeX-command-default "LatexMk"
@@ -142,8 +158,8 @@
         fill-column 90)
 
   (add-to-list 'TeX-command-list
-               '("LatexMk" "latexmk -pvc -lualatex -interaction=nonstopmode %t"
-                 TeX-run-command nil t))
+               '("LatexMk" "latexmk -lualatex -synctex=1 -file-line-error -interaction=nonstopmode %(output-dir) %t"
+                 TeX-run-TeX nil t))
 
   (dolist (hook '(cdlatex-mode LaTeX-preview-setup flyspell-mode
                   wc-mode TeX-fold-mode auto-fill-mode))
