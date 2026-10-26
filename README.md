@@ -1,6 +1,6 @@
 # Doom Emacs — configuração pessoal
 
-Submódulo de [dotfiles](https://github.com/joaobertholino/dotfiles), em `~/.config/doom`, usado no desktop Gentoo com Hyprland. Estado conferido em **25/10/2026**.
+Submódulo de [dotfiles](https://github.com/joaobertholino/dotfiles), em `~/.config/doom`, usado no desktop Gentoo com Hyprland. Integração com a sessão atualizada em **26/10/2026**.
 
 Este repositório contém a configuração pessoal. O Emacs, o framework Doom em `~/.config/emacs`, os pacotes baixados e os programas externos têm instalação separada.
 
@@ -79,6 +79,12 @@ doom-editor-terminal arquivo.txt
 ```
 
 `systemctl --user restart emacs.service` encerra o daemon e suas sessões; salve os buffers antes de reiniciar.
+
+### Relação com a sessão gráfica
+
+A unidade local do Emacs fica em `/etc/systemd/user/emacs.service`, executa `/usr/local/bin/emacs --fg-daemon` e está habilitada em `default.target`. O daemon já era um serviço de usuário e continua independente de `hyprland-session.target`; reiniciar o conjunto de Waybar, Dunst e demais componentes gráficos não reinicia o Emacs.
+
+O Hyprland mantém os atalhos de abertura sob demanda. Seu helper de início apenas importa o ambiente Wayland para D-Bus/systemd e ativa os serviços gráficos. Não acrescente um segundo daemon Emacs ao autostart do compositor. As unidades, wrappers e o helper não são instalados por este submódulo; veja a [documentação de sessão no dotfiles](https://github.com/joaobertholino/dotfiles#sessão-notificações-e-calendário).
 
 ## Programas externos
 
