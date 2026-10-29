@@ -6,7 +6,7 @@
  '(custom-safe-themes t)
  '(package-selected-packages
    '(auto-complete-clang company-anaconda dracula-theme latex-extra math-symbols
-     pdf-tools xwidgete zathura)))
+     openwith pdf-tools xwidgete zathura)))
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
