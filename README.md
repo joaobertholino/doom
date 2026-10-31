@@ -9,12 +9,45 @@ Este repositório contém a configuração pessoal. O Emacs, o framework Doom em
 | Arquivo/diretório | Função |
 | --- | --- |
 | `init.el` | Módulos de interface, edição, ferramentas e linguagens |
-| `config.el` | Tema, dashboard, projetos, LaTeX, Org, Citar, Markdown e Copilot |
+| `config.el` | Carrega os arquivos de configuração em `modules/`, na ordem definida |
+| `modules/` | Configuração pessoal organizada por função |
 | `packages.el` | Declarações de pacotes adicionais e receitas |
 | `custom.el` | Personalizações do Emacs Custom, CUA e divisão de janelas |
 | `snippets/LaTeX-mode/` | Snippets LaTeX |
 | `logo-splash/` | Imagens do dashboard |
 | `catalogo/` | Material auxiliar versionado junto à configuração |
+
+## Organização da configuração
+
+O `config.el` contém apenas os carregamentos com `load!`. Os arquivos abaixo ficam
+em `~/.config/doom/modules/`, na ordem em que são carregados:
+
+| Arquivo | Responsabilidade |
+| --- | --- |
+| `core.el` | Identidade, tema, faces, opções gerais e salvamento automático |
+| `projects.el` | Criação de projetos e comandos de terminal/navegador |
+| `windows.el` | Funções auxiliares para dividir janelas e abrir arquivos/buffers |
+| `dashboard.el` | Aparência e ações do dashboard |
+| `latex.el` | LaTeX, atualização de PDFs, Citar e Texlab |
+| `org.el` | Agenda, tarefas e captura do Org |
+| `version-control.el` | Magit e indicadores de alterações Git |
+| `documents.el` | Markdown, Pandoc e associação de PDFs |
+| `navigation.el` | Descoberta de projetos, Vterm e atalhos de navegação |
+| `copilot.el` | Integração e atalhos do Copilot |
+| `help.el` | Acesso ao catálogo pessoal de atalhos |
+| `www-live.el` | Desenvolvimento e prévia do site local |
+| `prettier.el` | Formatação de código com Prettier |
+
+Essa pasta contém arquivos pessoais carregados pelo `config.el`; a seleção dos
+módulos e pacotes do Doom continua em `init.el` e `packages.el`. Para acrescentar
+uma configuração, edite o arquivo correspondente. Ao criar um novo arquivo,
+adicione seu `(load! "modules/nome")` ao `config.el` na ordem necessária.
+
+Os arquivos `www-live.el` e `prettier.el`, antes na raiz, agora ficam em `modules/`.
+Em uma sessão já aberta, use `M-x doom/reload` ou reinicie o Emacs para carregar a
+organização completa. Para carregar somente um deles, use `M-x load-file` com o
+novo caminho. Não é necessário instalar pacotes nem executar `doom sync` apenas
+por causa dessa reorganização.
 
 ## Recursos configurados
 
