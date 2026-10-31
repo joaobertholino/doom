@@ -284,3 +284,5 @@
 (map! :leader
       :desc "Abrir catálogo de atalhos (PDF)"
       "h B" #'my/open-doom-keybindings-catalog)
+
+(load! "www-live")

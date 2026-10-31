@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: type-inline-comment
+# key: @ty
+# condition: (and (derived-mode-p 'js2-mode) (fboundp 'js2-node-type) (fboundp 'js2-node-at-point) (boundp 'js2-COMMENT) (js2-node-at-point) (not (= (js2-node-type (js2-node-at-point)) js2-COMMENT)))
+# --
+/** @type {${type}} */
