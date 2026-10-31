@@ -286,3 +286,5 @@
       "h B" #'my/open-doom-keybindings-catalog)
 
 (load! "www-live")
+
+(load! "prettier")
